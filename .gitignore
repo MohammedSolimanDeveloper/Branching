@@ -50,3 +50,6 @@
 **\out  
 **\bin  
  **\target 
+\node_modules
+\packages
+thumbs.db
