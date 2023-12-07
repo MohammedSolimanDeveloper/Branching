@@ -1,0 +1,52 @@
+# 1- What is .gitignore file ?
+##############################
+
+# A- In any project, there are some files and directories does not related to project, so these files 
+#### must be ignored from your project on repository, these file such as:-
+####### 1- Compiled codes or compiled files ends with .o, .class
+####### 2- Hidden System Files such as .ds_store in Mac operating system and thumbs.db for Windows
+####### 3- Project Output directory such as \out, \bin, \target
+####### 4- Dependency Caching directories such as \node_modules , \packages
+####### 5- IDE Settings Customized Configuration such as .idea\workspace.xml
+####### 6- Files created when runtime codes such as .tmp, .log, .lock 
+# B- all ignored files when added to working directory the git will ignored it or not see these files
+
+# C- How To Create gitignore File?
+##################################
+####### 1- Create gitignore file must be named .gitignore to recognize of file from git distributed version control system:
+########### touch .gitignore
+####### 2- Open .gitignore file in vscode
+########### code .gitignore
+####### 3- Add pattern of files that matched file must be ignored as below for example:
+########### A- *.log            ====> ignore all files ends with extension .log
+########### B- **\logs          ====> ignore all directories and sub directories contains logs
+########### C- debug[0-9].log   ====> ignore all files ends with entension log and in range debug0.log To debug9.log
+########### D- debug[a-z].log   ====> ignore all files ends with entension log and in range debuga.log To debugz.log
+########### E- filename1.tmp    ====> ignore specific file with name filename1.tmp
+########### F- !filename2.tmp   ====> Not ignore specific file with name filename2.tmp
+
+####### 4- Add .gitignore File To staging area:
+########### git add .gitignore
+####### 5- Add or commit .gitignore File To local repository:
+########### git commit -m "Added .gitignore File"
+####### 6- Add or push .gitignore File To remote repo:
+########### git push remote_repo local_repo
+
+
+# D- How To Force to add some file included in .gitignore File ?
+################################################################
+####### 1- Force add files to staging area 
+########### git add --force [filename1] [filename2]  OR  git add -f [filename1] [filename2]
+####### 2- Add or commit files To local repository:
+########### git commit -m "Any Message"
+####### 6- Add or push files To remote repo:
+########### git push remote_repo local_repo
+*.log 
+*.tmp  
+*.lock  
+*.o  
+*.class  
+**\logs  
+**\out  
+**\bin  
+ **\target 
